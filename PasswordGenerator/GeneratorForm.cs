@@ -15,6 +15,7 @@ namespace PasswordGenerator
         private bool HasUppercase = false;
         private bool HasNumbers = false;
         private bool HasSymbols = false;
+        private bool RandomizeIncluded = false;
         private string password = String.Empty;
 
         public PasswordGenerator()
@@ -41,10 +42,18 @@ namespace PasswordGenerator
                 string input = InputTextBox.Text;
                 string output = String.Empty;
 
-                for (int i = 0; i < includeLength; i++)
+                if (RandomizeIncluded)
                 {
-                    output += RandomizeLetterToChar(input[i]);
+                    for (int i = 0; i < includeLength; i++)
+                    {
+                        output += RandomizeLetterToChar(input[i]);
+                    }
                 }
+                else
+                {
+                    output = input;
+                }
+
                 password = password.Insert(GetRandomNumber(0, password.Length), output);
             }
             OutputTextBox.Text = password;
@@ -58,6 +67,7 @@ namespace PasswordGenerator
             HasSymbols = SymbolsCheckBox.Checked;
             HasNumbers = NumbersCheckBox.Checked;
             HasUppercase = UppercaseCheckBox.Checked;
+            RandomizeIncluded = IncludeBox.Checked;
         }
 
         private char RandomizeLetterToChar(char c)
@@ -93,8 +103,7 @@ namespace PasswordGenerator
 
         private bool GetRandomBool()
         {
-            bool randomBool = GetRandomNumber(0,2) == 1 ? true : false;
-            return randomBool;
+            return GetRandomNumber(0,2) == 1 ? true : false;
         }
 
         private char RandomUpperOrLower(char c)

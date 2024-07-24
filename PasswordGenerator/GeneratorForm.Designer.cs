@@ -39,11 +39,12 @@ namespace PasswordGenerator
             this.CopyClipboardButton = new System.Windows.Forms.Button();
             this.OutputLabel = new System.Windows.Forms.Label();
             this.OutputTextBox = new System.Windows.Forms.TextBox();
+            this.IncludeBox = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // GenerateButton
             // 
-            this.GenerateButton.Location = new System.Drawing.Point(11, 155);
+            this.GenerateButton.Location = new System.Drawing.Point(176, 100);
             this.GenerateButton.Margin = new System.Windows.Forms.Padding(2);
             this.GenerateButton.Name = "GenerateButton";
             this.GenerateButton.Size = new System.Drawing.Size(97, 28);
@@ -54,10 +55,10 @@ namespace PasswordGenerator
             // 
             // InputTextBox
             // 
-            this.InputTextBox.Location = new System.Drawing.Point(135, 100);
+            this.InputTextBox.Location = new System.Drawing.Point(15, 113);
             this.InputTextBox.MaxLength = 5;
             this.InputTextBox.Name = "InputTextBox";
-            this.InputTextBox.Size = new System.Drawing.Size(100, 20);
+            this.InputTextBox.Size = new System.Drawing.Size(155, 20);
             this.InputTextBox.TabIndex = 5;
             // 
             // SymbolsCheckBox
@@ -122,24 +123,24 @@ namespace PasswordGenerator
             // IncludeLabel
             // 
             this.IncludeLabel.AutoSize = true;
-            this.IncludeLabel.Location = new System.Drawing.Point(135, 80);
+            this.IncludeLabel.Location = new System.Drawing.Point(15, 93);
             this.IncludeLabel.Name = "IncludeLabel";
-            this.IncludeLabel.Size = new System.Drawing.Size(124, 13);
+            this.IncludeLabel.Size = new System.Drawing.Size(127, 13);
             this.IncludeLabel.TabIndex = 14;
-            this.IncludeLabel.Text = "Password should include";
+            this.IncludeLabel.Text = "Password should include:";
             // 
             // NoteLabel
             // 
-            this.NoteLabel.Location = new System.Drawing.Point(135, 130);
+            this.NoteLabel.Location = new System.Drawing.Point(15, 143);
             this.NoteLabel.Name = "NoteLabel";
-            this.NoteLabel.Size = new System.Drawing.Size(130, 59);
+            this.NoteLabel.Size = new System.Drawing.Size(157, 43);
             this.NoteLabel.TabIndex = 16;
             this.NoteLabel.Text = "*Having recognizable words in your password makes it weaker but easier to remembe" +
     "r.*";
             // 
             // CopyClipboardButton
             // 
-            this.CopyClipboardButton.Location = new System.Drawing.Point(12, 195);
+            this.CopyClipboardButton.Location = new System.Drawing.Point(177, 140);
             this.CopyClipboardButton.Margin = new System.Windows.Forms.Padding(2);
             this.CopyClipboardButton.Name = "CopyClipboardButton";
             this.CopyClipboardButton.Size = new System.Drawing.Size(97, 36);
@@ -151,7 +152,7 @@ namespace PasswordGenerator
             // OutputLabel
             // 
             this.OutputLabel.AutoSize = true;
-            this.OutputLabel.Location = new System.Drawing.Point(8, 81);
+            this.OutputLabel.Location = new System.Drawing.Point(83, 194);
             this.OutputLabel.Name = "OutputLabel";
             this.OutputLabel.Size = new System.Drawing.Size(106, 13);
             this.OutputLabel.TabIndex = 18;
@@ -159,17 +160,30 @@ namespace PasswordGenerator
             // 
             // OutputTextBox
             // 
-            this.OutputTextBox.Location = new System.Drawing.Point(11, 99);
+            this.OutputTextBox.Location = new System.Drawing.Point(8, 212);
             this.OutputTextBox.Name = "OutputTextBox";
             this.OutputTextBox.ReadOnly = true;
-            this.OutputTextBox.Size = new System.Drawing.Size(103, 20);
+            this.OutputTextBox.Size = new System.Drawing.Size(269, 20);
             this.OutputTextBox.TabIndex = 19;
+            // 
+            // IncludeBox
+            // 
+            this.IncludeBox.AutoSize = true;
+            this.IncludeBox.Checked = true;
+            this.IncludeBox.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.IncludeBox.Location = new System.Drawing.Point(135, 72);
+            this.IncludeBox.Name = "IncludeBox";
+            this.IncludeBox.Size = new System.Drawing.Size(122, 17);
+            this.IncludeBox.TabIndex = 20;
+            this.IncludeBox.Text = "Randomize included";
+            this.IncludeBox.UseVisualStyleBackColor = true;
             // 
             // PasswordGenerator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(285, 241);
+            this.Controls.Add(this.IncludeBox);
             this.Controls.Add(this.OutputTextBox);
             this.Controls.Add(this.OutputLabel);
             this.Controls.Add(this.CopyClipboardButton);
@@ -201,5 +215,6 @@ namespace PasswordGenerator
         private System.Windows.Forms.Button CopyClipboardButton;
         private System.Windows.Forms.Label OutputLabel;
         private System.Windows.Forms.TextBox OutputTextBox;
+        private System.Windows.Forms.CheckBox IncludeBox;
     }
 }
