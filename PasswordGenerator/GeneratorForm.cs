@@ -9,6 +9,7 @@ namespace PasswordGenerator
     {
         Random random = new Random();
         const int PASSWORDMINLENGTH = 8;
+        const int MAXMININCLUDELENGTH = 5;
         const string CHARS = "0123456789abcdefghijklmnopqrstuvwxyz!@#$%^&*?-_=+";
         private int passwordLength;
         private int includeLength = 0;
@@ -118,6 +119,19 @@ namespace PasswordGenerator
         {
             Clipboard.SetText(OutputTextBox.Text);
             MessageBox.Show("Created password copied to clipboard.");
+        }
+
+        private void LengthComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            InputTextBox.MaxLength = LengthComboBox.SelectedIndex + MAXMININCLUDELENGTH;
+            int newlength = InputTextBox.MaxLength;
+            string str = InputTextBox.Text.Substring(0, Math.Min(newlength, InputTextBox.Text.Length));
+
+            if (InputTextBox.TextLength > 0)
+            {
+                InputTextBox.Text = str;
+            }
+            InputTextBox.Update();
         }
     }
 }

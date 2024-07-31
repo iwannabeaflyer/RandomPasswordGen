@@ -119,6 +119,7 @@ namespace PasswordGenerator
             this.LengthComboBox.Size = new System.Drawing.Size(116, 21);
             this.LengthComboBox.TabIndex = 12;
             this.LengthComboBox.Text = "Password Length";
+            this.LengthComboBox.SelectedIndexChanged += new System.EventHandler(this.LengthComboBox_SelectedIndexChanged);
             // 
             // IncludeLabel
             // 
