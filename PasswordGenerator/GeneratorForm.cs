@@ -18,6 +18,8 @@ namespace PasswordGenerator
         private bool HasSymbols = false;
         private bool RandomizeIncluded = false;
         private string password = String.Empty;
+        private int startingposition = 0;
+        private int endingposition = 49;
 
         public PasswordGenerator()
         {
@@ -28,14 +30,10 @@ namespace PasswordGenerator
         private void GeneratePassword(object sender, EventArgs e)
         {
             UpdateValues();
-            int start = 0;
-            int end = 49;
-            if (!HasNumbers) start = 10;
-            if (!HasSymbols) end = 36;
 
             for (int i = 0; i < passwordLength; i++)
             {
-                password += RandomizeLetterToChar(CHARS.ElementAt(GetRandomNumber(start, end)));
+                password += RandomizeLetterToChar(CHARS.ElementAt(GetRandomNumber(startingposition, endingposition)));
             }
 
             if (includeLength > 0)
@@ -69,6 +67,9 @@ namespace PasswordGenerator
             HasNumbers = NumbersCheckBox.Checked;
             HasUppercase = UppercaseCheckBox.Checked;
             RandomizeIncluded = IncludeBox.Checked;
+
+            if (!HasNumbers) startingposition = 10; else startingposition = 0;
+            if (!HasSymbols) endingposition = 36; else endingposition = 49;
         }
 
         private char RandomizeLetterToChar(char c)

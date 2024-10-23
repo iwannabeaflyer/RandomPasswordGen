@@ -128,7 +128,7 @@ namespace PasswordGenerator
             this.IncludeLabel.Name = "IncludeLabel";
             this.IncludeLabel.Size = new System.Drawing.Size(127, 13);
             this.IncludeLabel.TabIndex = 14;
-            this.IncludeLabel.Text = "Password should include:";
+            this.IncludeLabel.Text = "*Password should include:";
             // 
             // NoteLabel
             // 
@@ -136,8 +136,7 @@ namespace PasswordGenerator
             this.NoteLabel.Name = "NoteLabel";
             this.NoteLabel.Size = new System.Drawing.Size(157, 43);
             this.NoteLabel.TabIndex = 16;
-            this.NoteLabel.Text = "*Having recognizable words in your password makes it weaker but easier to remembe" +
-    "r.*";
+            this.NoteLabel.Text = "*Having recognizable words in your password makes it weaker but easier to remember.";
             // 
             // CopyClipboardButton
             // 
